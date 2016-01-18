@@ -1,0 +1,27 @@
+Elm.Bingo = Elm.Bingo || {};
+Elm.Bingo.make = function (_elm) {
+   "use strict";
+   _elm.Bingo = _elm.Bingo || {};
+   if (_elm.Bingo.values) return _elm.Bingo.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var pageFooter = A2($Html.footer,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("http://bryanbryce.com")]),_U.list([$Html.text("Home")]))]));
+   var pageHeader = A2($Html.h1,_U.list([]),_U.list([$Html.text("Bingo!")]));
+   var main = A2($Html.div,_U.list([]),_U.list([pageHeader,pageFooter]));
+   var greet = F4(function (name,color,flavor,pet) {
+      return A2($Basics._op["++"],
+      name,
+      A2($Basics._op["++"],
+      "\'s favorites are: ",
+      A2($Basics._op["++"],color,A2($Basics._op["++"]," ",A2($Basics._op["++"],flavor,A2($Basics._op["++"]," ",pet))))));
+   });
+   return _elm.Bingo.values = {_op: _op,greet: greet,pageHeader: pageHeader,pageFooter: pageFooter,main: main};
+};
